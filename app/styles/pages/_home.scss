@@ -25,12 +25,12 @@ body.page-home {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     .inner {
       box-sizing: border-box;
       flex: 0 0 auto;
       padding: 0 24px;
-      text-align: center;
 
       @for $i from 1 through 3 {
         @media only screen and (min-width: home-card-span-outer($i)) {
@@ -62,7 +62,7 @@ body.page-home {
 
     .subtitle {
       margin: 0 0 48px 0;
-      max-width: 360px;
+      text-align: center;
     }
   }
 
