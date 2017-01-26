@@ -30,6 +30,7 @@ body.page-home {
       box-sizing: border-box;
       flex: 0 0 auto;
       padding: 0 24px;
+      text-align: center;
 
       @for $i from 1 through 3 {
         @media only screen and (min-width: home-card-span-outer($i)) {
