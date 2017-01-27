@@ -47,8 +47,8 @@ export class AppShortcutIconGenerator extends BaseGenerator {
       container: '#inputs-form',
       fields: [
         new studio.ImageField('source', {
-          title: 'Source',
-          helpText: 'Must be transparent',
+          title: 'Fonte',
+          helpText: 'Deve ser transparente',
           maxFinalSize: { w: 128, h: 128 },
           clipartNoTrimPadding: true,
           defaultValueClipart: 'search',
@@ -61,16 +61,16 @@ export class AppShortcutIconGenerator extends BaseGenerator {
         }),
         (nameField = new studio.TextField('name', {
           newGroup: true,
-          title: 'Name',
-          helpText: 'Used when generating ZIP files.',
+          title: 'Nome',
+          helpText: 'Usado na geração dos arquivos ZIP.',
           defaultValue: defaultNameForSourceValue_({})
         })),
         new studio.ColorField('foreColor', {
-          title: 'Color',
+          title: 'Cor',
           defaultValue: '#448aff'
         }),
         new studio.ColorField('backColor', {
-          title: 'Background color',
+          title: 'Cor de Fundo',
           defaultValue: '#f5f5f5'
         })
       ]

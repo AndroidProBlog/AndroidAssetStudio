@@ -36,8 +36,8 @@ export class GenericIconGenerator extends BaseGenerator {
       container: '#inputs-form',
       fields: [
         new studio.ImageField('source', {
-          title: 'Source',
-          helpText: 'Must be transparent',
+          title: 'Fonte',
+          helpText: 'Deve ser transparente',
           maxFinalSize: { w: 720, h: 720 }, // max render size, for SVGs
           defaultValueClipart: 'ac_unit',
           dropTarget: document.body,
@@ -49,28 +49,28 @@ export class GenericIconGenerator extends BaseGenerator {
         }),
         new studio.RangeField('size', {
           newGroup: true,
-          title: 'Asset size',
-          helpText: 'Size of the final asset',
+          title: 'Tamanho do Asset',
+          helpText: 'Tamanho final do asset.',
           min: 4,
           max: 200,
           defaultValue: 32,
           textFn: d => `${d}dp`,
         }),
         new studio.RangeField('padding', {
-          title: 'Asset padding',
-          helpText: 'Padding around the icon asset',
+          title: 'Preenchimento do Asset',
+          helpText: 'Preenchimento envolta do icone.',
           defaultValue: 8,
           textFn: d => `${d}dp`,
         }),
         new studio.ColorField('color', {
-          title: 'Color',
-          helpText: 'Set to transparent to retain original colors',
+          title: 'Cor',
+          helpText: 'Defina como transparente para manter as cores originais.',
           defaultValue: 'rgba(0, 0, 0, 0.54)',
           alpha: true
         }),
         (nameField = new studio.TextField('name', {
-          title: 'Name',
-          helpText: 'Used when generating ZIP files as the resource name.',
+          title: 'Nome',
+          helpText: 'Usado na geração dos arquivos ZIP.',
           defaultValue: defaultNameForSourceValue_({})
         }))
       ]

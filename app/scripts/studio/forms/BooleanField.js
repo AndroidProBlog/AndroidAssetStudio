@@ -20,8 +20,8 @@ export class BooleanField extends EnumField {
   constructor(id, params) {
     super(id, params);
     params.options = [
-      { id: '1', title: params.onText || 'Yes' },
-      { id: '0', title: params.offText || 'No' }
+      { id: '1', title: params.onText || 'Sim' },
+      { id: '0', title: params.offText || 'Não' }
     ];
     params.defaultValue = params.defaultValue ? '1' : '0';
     params.buttons = true;

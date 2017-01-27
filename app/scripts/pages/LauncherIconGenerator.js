@@ -71,7 +71,7 @@ export class LauncherIconGenerator extends BaseGenerator {
       container: '#inputs-form',
       fields: [
         new studio.ImageField('foreground', {
-          title: 'Foreground',
+          title: 'Parte da Frente',
           maxFinalSize: { w: 720, h: 720 }, // max render size, for SVGs
           defaultValueTrim: 1,
           defaultValuePadding: .25,
@@ -80,29 +80,29 @@ export class LauncherIconGenerator extends BaseGenerator {
         }),
         new studio.ColorField('foreColor', {
           newGroup: true,
-          title: 'Color',
-          helpText: 'Set to transparent to use original colors',
+          title: 'Cor',
+          helpText: 'Defina como transparente para manter as cores originais.',
           alpha: true,
           defaultValue: 'rgba(96, 125, 139, 0)'
         }),
         (backColorField = new studio.ColorField('backColor', {
-          title: 'Background color',
+          title: 'Cor de Fundo',
           defaultValue: '#448aff'
         })),
         new studio.BooleanField('crop', {
-          title: 'Scaling',
+          title: 'Escala',
           defaultValue: false,
-          offText: 'Center',
-          onText: 'Crop'
+          offText: 'Centro',
+          onText: 'Cortar'
         }),
         new studio.EnumField('backgroundShape', {
-          title: 'Shape',
+          title: 'Forma',
           options: [
-            { id: 'none', title: 'None' },
-            { id: 'square', title: 'Square' },
-            { id: 'circle', title: 'Circle' },
-            { id: 'vrect', title: 'Tall rect' },
-            { id: 'hrect', title: 'Wide rect' }
+            { id: 'none', title: 'Nenhuma' },
+            { id: 'square', title: 'Quadrado' },
+            { id: 'circle', title: 'Circulo' },
+            { id: 'vrect', title: 'Retângulo Alto' },
+            { id: 'hrect', title: 'Retângulo Largo' }
           ],
           defaultValue: 'square',
           onChange: newValue => {
@@ -117,13 +117,13 @@ export class LauncherIconGenerator extends BaseGenerator {
           }
         }),
         (effectsField = new studio.EnumField('effects', {
-          title: 'Effect',
+          title: 'Efeito',
           buttons: true,
           options: DEFAULT_EFFECT_OPTIONS,
           defaultValue: 'none'
         })),
         new studio.TextField('name', {
-          title: 'Name',
+          title: 'Nome',
           defaultValue: 'ic_launcher'
         })
       ]

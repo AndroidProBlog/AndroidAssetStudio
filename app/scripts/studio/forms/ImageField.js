@@ -66,13 +66,13 @@ export class ImageField extends Field {
     var types;
     if (this.params_.imageOnly) {
       types = [
-        ['image', 'Select image']
+        ['image', 'Selecione a imagem']
       ];
     } else {
       types = [
-        ['image', 'Image'],
+        ['image', 'Imagem'],
         ['clipart', 'Clipart'],
-        ['text', 'Text']
+        ['text', 'Texto']
       ];
     }
 
@@ -138,7 +138,7 @@ export class ImageField extends Field {
 
       let clipartFilterEl = $('<input>')
         .addClass('form-image-clipart-filter')
-        .attr('placeholder', 'Find clipart')
+        .attr('placeholder', 'Procurar clipart')
         .on('input', ev => {
           let $filter = $(ev.currentTarget);
           let val = $filter.val().toLowerCase().replace(/[^\w]+/g, '');
@@ -159,7 +159,7 @@ export class ImageField extends Field {
               <a target="_blank"
                  class="external-link"
                  href="https://github.com/google/material-design-icons">
-              Material Design Icons on GitHub</a>
+              Material Design Icons no GitHub</a>
               `)
           .appendTo(clipartParamsEl);
 
@@ -182,8 +182,8 @@ export class ImageField extends Field {
             title: 'Text',
           }),
           (fontFamilyField = new EnumField('font', {
-            title: 'Font',
-            helpText: 'From fonts.google.com'
+            title: 'Fonte',
+            helpText: 'Fontes do fonts.google.com'
           }))
         ]
       });
@@ -215,13 +215,13 @@ export class ImageField extends Field {
         container: spaceFormContainer,
         fields: [
           (this.spaceFormTrimField_ = new BooleanField('trim', {
-            title: 'Trim whitespace',
+            title: 'Cortar Espaço em Branco',
             defaultValue: true,
-            offText: `Don't trim`,
-            onText: 'Trim'
+            offText: `Não Cortar`,
+            onText: 'Cortar'
           })),
           (this.spaceFormPaddingField_ = new RangeField('pad', {
-            title: 'Padding',
+            title: 'Preenchimento',
             defaultValue: this.params_.defaultValuePadding || 0,
             min: -0.1,
             max: 0.5, // 1/2 of min(width, height)
@@ -618,7 +618,7 @@ ImageField.loadImageFromFileList = function(fileList) {
     let file = Array.from(fileList).find(file => ImageField.isValidFile_(file));
 
     if (!file) {
-      alert('Please choose a valid image file (PNG, JPG, GIF, SVG, etc.)');
+      alert('Por favor, selecione uma imagem valida (PNG, JPG, GIF, SVG, etc.)');
       resolve(null);
       return;
     }
@@ -637,25 +637,25 @@ ImageField.loadImageFromFileList = function(fileList) {
     fileReader.onerror = e => {
       switch (e.target.error.code) {
         case e.target.error.NOT_FOUND_ERR:
-          alert('File not found!');
+          alert('Arquivo não encontrado!');
           break;
 
         case e.target.error.NOT_READABLE_ERR:
-          alert('File is not readable');
+          alert('Arquivo não pode ser lido');
           break;
 
         case e.target.error.ABORT_ERR:
           break; // noop
 
         default:
-          alert('An error occurred reading this file.');
+          alert('Ocorreu um erro de leitura.');
       }
 
       resolve(null);
     };
 
     fileReader.onabort = e => {
-      alert('File read cancelled');
+      alert('Leitura do arquivo cancelada');
       resolve(null);
     };
 
